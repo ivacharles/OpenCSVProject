@@ -1,6 +1,6 @@
-drop database if exists fantasy;
-create database fantasy;
-use fantasy;
+drop database if exists fantasyfantasyDB;
+create database fantasyDB;
+use fantasyDB;
 
 
 create table team (
@@ -62,7 +62,9 @@ select P.playerName, P.FAN, P.MINI, P.PTS, P.REBTotal,P.AST, P.STL, P.BLK, P.Tur
 #"select G.dateOfTheGame, G.opponentName , G.teamWinOrLoose ,G.teamScore , G.opponentScore, P.playerName, P.FAN, P.MINI, P.PTS, P.REBTotal,P.AST, P.STL, P.BLK, P.TurnO, P.PF  from game G join player P on G.homeTeam = P.homeTeam where G.homeTeam = ?;"
 # # "Hawks","Celtics","Nets","Hornets","Bulls","Cavaliers","Mavericks","Nuggets","Pistons","Warriors","Rockets","Pacers","Clippers","Lakers","Grizzlies","Heat",
 # "Bucks","Timberwolves","Pelicans","Knicks","Thunder","Magic","Sixers","Suns","Blazers","Kings","Spurs","Raptors","Jazz","Wizards"
-#    private final String [] teamList = {"Hawks","Celtics","Nets","Hornets","Bulls","Cavaliers","Mavericks","Nuggets","Pistons","Warriors","Rockets","Pacers","Clippers","Lakers","Grizzlies","Heat","Buks","Timberwolves","Pelicans","Knicks","Thunder","Magic","Sixers","Suns","Blazers","Kings","Spurs","Raptors","Jazz","Wizards"};
+#    private final String [] teamList = {"Hawks","Celtics","Nets","Hornets","Bulls","Cavaliers","Mavericks","Nuggets","Pistons",
+#    "Warriors","Rockets","Pacers","Clippers","Lakers","Grizzlies","Heat","Buks","Timberwolves","Pelicans","Knicks","Thunder","Magic",
+#    "Sixers","Suns","Blazers","Kings","Spurs","Raptors","Jazz","Wizards"};
 
 insert into team value ('Wizards');
 
@@ -73,3 +75,5 @@ delete from game where gameID ='Hawks - G2';
 drop table game;
 
 insert into player values ('Nets - G26','Nets','ÔJoe¬†HarrisF','26:12','3','6','50','2','4','50','1','2','50','0','1','1','0','0','0','0','4','9','23');
+delete from game where gameID='9';
+delete from player where gameID='9';

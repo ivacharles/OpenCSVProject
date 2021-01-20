@@ -1,10 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iva.MAIN.getDataController">
    <children>
-      <Button layoutX="525.0" layoutY="337.0" mnemonicParsing="false" onAction="#OnButtonPressedGetData" prefHeight="105.0" prefWidth="151.0" text="Add File" />
+      <Label fx:id="gameInfo" layoutX="42.0" layoutY="141.0" prefHeight="38.0" prefWidth="458.0" text="Game  info">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <VBox layoutX="865.0" prefHeight="800.0" prefWidth="335.0" spacing="60.0">
+         <children>
+            <GridPane prefHeight="453.0" prefWidth="195.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <DatePicker fx:id="dateOfTheGamePicker" prefWidth="200.0" promptText="gamedate" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="opponentTeamNameChoice" prefWidth="200.0" GridPane.rowIndex="5" />
+                  <ChoiceBox fx:id="teamWinOrLoseChoice" prefWidth="200.0" GridPane.rowIndex="7" />
+                  <TextField fx:id="currentTeamFinalScore" prefHeight="27.0" prefWidth="200.0" promptText="Team final score" GridPane.rowIndex="9" />
+                  <TextField fx:id="opponentTeamFinalScore" prefWidth="200.0" promptText="Opp. final score" GridPane.rowIndex="11" />
+                  <Label prefHeight="61.0" prefWidth="200.0" text="Add Game Stats here" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial Narrow Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Date of the Game" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Arial Narrow Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Opponent Team" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Arial Narrow Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Win or Lose" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Arial Narrow Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Team Final Score" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Arial Narrow Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Opp. Final Score" GridPane.rowIndex="10">
+                     <font>
+                        <Font name="Arial Narrow Italic" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button mnemonicParsing="false" onAction="#OnButtonPressedGetData" prefHeight="105.0" prefWidth="200.0" text="Add File to Save">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Label fx:id="wasGameStatsSavedProperly" prefHeight="47.0" prefWidth="198.0" text="game Properly saved">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="25.0" left="70.0" right="70.0" top="60.0" />
+         </padding>
+      </VBox>
+      <Label fx:id="teamNameLabel" layoutX="489.0" layoutY="17.0" prefHeight="61.0" prefWidth="222.0" text="Team name">
+         <font>
+            <Font size="44.0" />
+         </font>
+      </Label>
+      <Pagination fx:id="pagination" layoutX="23.0" layoutY="177.0" prefHeight="591.0" prefWidth="681.0" />
+      <TableView fx:id="teamTableView" layoutX="42.0" layoutY="179.0" prefHeight="531.0" prefWidth="639.0">
+         <columns>
+            <TableColumn fx:id="playerNameColumn" prefWidth="187.0" text="Player name" />
+            <TableColumn fx:id="fantasyPointColumn" prefWidth="62.0" text="FAN PT" />
+            <TableColumn fx:id="playerMinPlayedColumn" prefWidth="55.0" text="MIN" />
+            <TableColumn fx:id="playerNumberPointColumn" prefWidth="47.0" text="PTS" />
+            <TableColumn fx:id="playerNumberRebColumn" prefWidth="41.0" text="REB" />
+            <TableColumn fx:id="playerNumberAstColumn" prefWidth="46.0" text="AST" />
+            <TableColumn fx:id="playerNumberStlColumn" prefWidth="49.0" text="STL" />
+            <TableColumn fx:id="playerNumberBlkColumn" prefWidth="54.0" text="BLK" />
+            <TableColumn fx:id="playerNumberTurnOColumn" prefWidth="46.0" text="TO" />
+            <TableColumn fx:id="playerNumberPersonalFColumn" prefWidth="52.0" text="PF" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

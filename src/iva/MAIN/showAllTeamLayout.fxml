@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iva.MAIN.ShowAllTeamLayoutController">
+   <children>
+      <ImageView fitHeight="958.0" fitWidth="1422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/picts/backgrowndPict4MainMenu2.png" />
+         </image>
+      </ImageView>
+      <GridPane hgap="5.0" layoutX="26.0" layoutY="214.0" prefHeight="632.0" prefWidth="1290.0" vgap="5.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="Pistons" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Detroit Pistons" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Nuggets" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="10.0" layoutY="42.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Denver Nuggets" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Grizzlies" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="110.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Memphis Grizzlies" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Magics" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="110.0" layoutY="42.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Orlando Magic" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Pacers" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="210.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Indiana Pacers" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Heat" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Miami Heat" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Sixers" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="210.0" layoutY="42.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Philadelphia 76ers" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Warriors" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="210.0" layoutY="72.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Golden State Warriors" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Bucks" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="310.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Milwaukee Bucks" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Suns" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="310.0" layoutY="42.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Phoenix Suns" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Timberwolves" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="310.0" layoutY="72.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Minnesota ...Wolves" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Blazers" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="510.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Portland Trail Blazers" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Rockets" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="410.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Houston Rockets" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Knicks" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="410.0" layoutY="72.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="New York Knicks" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Clippers" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Los Angeles Clippers" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Kings" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Sacramento Kings" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Pelicans" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="New Orleans Pelicans" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Spurs" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="610.0" layoutY="42.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="San Antonio Spurs" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Hornets" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Charlotte Hornets" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Lakers" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" layoutX="610.0" layoutY="72.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Los Angeles Lakers" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Thunder" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Oklahoma City Thunder" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font></Button>
+            <Button fx:id="Hawks" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Atlanta Hawks" textOverrun="WORD_ELLIPSIS" wrapText="true">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Celtics" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Boston Celtics" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="1">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Nets" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Brooklyn Nets" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Bulls" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Chicago Bulls" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Cavaliers" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Cleveland Cavaliers" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="5">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Maveriks" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Dallas Mavericks" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="6">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Raptors" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Toronto Raptors" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Jazz" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Utah Jazz" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Button fx:id="Wizards" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Washington Wizards" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="343.0" layoutY="32.0" text="Select your team" textFill="#0a0a0a">
+         <font>
+            <Font name="Arial Narrow Bold Italic" size="100.0" />
+         </font>
+      </Label>
+      <Button mnemonicParsing="false" onAction="#changeScreenOnButtonPushToMainLayout" prefHeight="64.0" prefWidth="63.0">
+         <graphic>
+            <ImageView fitHeight="116.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/picts/homeicon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

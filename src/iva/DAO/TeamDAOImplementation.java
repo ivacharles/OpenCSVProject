@@ -3,6 +3,7 @@ package iva.DAO;
 import iva.DbUtility.DbConnection;
 import iva.MODELS.Game;
 import iva.MODELS.Player;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
@@ -18,7 +19,39 @@ public class TeamDAOImplementation implements TeamDAO{
 
     @Override
     public ObservableList<Game> getAllGames4TheTeam(String teamName) {
-        return null;
+        ObservableList <Game> allgames4thisTeam = FXCollections.observableArrayList();
+
+        try {
+            connection = DbConnection.establishConnection(); // establish a connection
+
+            String allGamesSQL = "select * from game where homeTeam = ?;";
+            stmt = connection.prepareStatement(allGamesSQL);
+
+            stmt.setString(1,teamName);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()){
+                Game game = new Game();
+                String gameID = rs.getString("gameID");
+                game.setTeamName(rs.getString("homeTeam"));
+                game.setDateOfTheGame(rs.getTimestamp("dateOfTheGame").toLocalDateTime().toLocalDate());
+                game.setOpponentName(rs.getString("opponentName"));
+                game.setTeamWinOrLoose(rs.getString("teamWinOrLoose"));
+                game.setTeamScore(rs.getInt("teamScore"));
+                game.setOpponentScore(rs.getInt("opponentScore"));
+                //all players stats for this game
+                game.setPlayerListStats(getAllPlayersStats4ThisGame(gameID));
+                allgames4thisTeam.add(game);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnection.closeResources(connection,stmt);
+
+        }
+        return allgames4thisTeam;
     }
 
     @Override
@@ -27,7 +60,7 @@ public class TeamDAOImplementation implements TeamDAO{
             connection = DbConnection.establishConnection(); // establish a connection
             connection.setAutoCommit(false);
 
-            String gameSQL = "insert into game values (?,?,?,?,?,?);";
+            String gameSQL = "insert into game (homeTeam, dateOfTheGame,opponentName,teamWinOrLoose,teamScore,opponentScore) values (?,?,?,?,?,?);";
             stmt = connection.prepareStatement(gameSQL, Statement.RETURN_GENERATED_KEYS);
 
             //set all ? before we execute
@@ -39,6 +72,7 @@ public class TeamDAOImplementation implements TeamDAO{
             stmt.setInt(6,gameStats.getOpponentScore());
 
             int rowAffected = stmt.executeUpdate();
+//            System.out.println(rowAffected);
 
             //get generated key bak
             rs = stmt.getGeneratedKeys();
@@ -48,7 +82,7 @@ public class TeamDAOImplementation implements TeamDAO{
 
             //store list of players
             if(rowAffected == 1){
-                addPlayersStats(gameStats.getPlayerListStats(),gameId, gameStats.getTeamName());
+                addPlayersStats(connection, gameStats.getPlayerListStats(),gameId, gameStats.getTeamName());
                 connection.commit();
             }else {
                 connection.rollback();
@@ -75,20 +109,18 @@ public class TeamDAOImplementation implements TeamDAO{
         return true;
     }
 
-    private void addPlayersStats(ObservableList<Player> playerListStats, int gameID, String teamName) {
+    private void addPlayersStats(Connection connection, ObservableList<Player> playerListStats, int gameID, String teamName) {
         for (int i=0; i<playerListStats.size(); i++){
             playerListStats.get(i).setGameID(gameID);
             playerListStats.get(i).setTeamName(teamName);
             playerListStats.get(i).setTotalFantasyPoints();
-            addPlayerStat(playerListStats.get(i));
+            addPlayerStat(connection, playerListStats.get(i));
         }
     }
 
-    private boolean addPlayerStat(Player player){
+    private void addPlayerStat(Connection connection, Player player){
 
         try {
-            connection = DbConnection.establishConnection(); // establish a connection
-
             String playerSQL = "insert into player values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
             stmt = connection.prepareStatement(playerSQL);
 
@@ -118,16 +150,50 @@ public class TeamDAOImplementation implements TeamDAO{
             stmt.setInt(23,player.getPlusMinus());
             stmt.setDouble(24,player.getFAN());
 
-            if (stmt.executeUpdate() != 0)
-                return true;
-            else
-                return false;
+            int playerFeedBack = stmt.executeUpdate();
+            System.out.println(playerFeedBack == 1);
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
-        } finally {
-            DbConnection.closeResources(connection,stmt);
         }
     }
+
+    private ObservableList<Player> getAllPlayersStats4ThisGame(String gameID) {
+        ObservableList<Player> playerArrayList = FXCollections.observableArrayList();
+
+        try {
+            connection = DbConnection.establishConnection(); // establish a connection
+
+            String allPlayersSQL = "select P.playerName, P.FAN, P.MINI, P.PTS, P.REBTotal,P.AST, P.STL, P.BLK, P.TurnO, P.PF  from player P where P.gameID = ?;";
+            stmt = connection.prepareStatement(allPlayersSQL);
+
+            stmt.setString(1,gameID);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()){
+
+                String playeName = (rs.getString("playerName"));
+                double setFAN = (rs.getDouble("FAN"));
+                String setMIN = (rs.getString("MINI"));
+                int setPTS = (rs.getInt("PTS"));
+                int setREBTotal = (rs.getInt("REBTotal"));
+                int setAST = (rs.getInt("AST"));
+                int setSTL = (rs.getInt("STL"));
+                int setBLK = (rs.getInt("BLK"));
+                int setTO = (rs.getInt("TurnO"));
+                int setPF = (rs.getInt("PF"));
+
+                Player player = new Player(playeName,setFAN,setMIN,setPTS,setREBTotal,setAST,setSTL,setBLK,setTO,setPF);
+                playerArrayList.add(player);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnection.closeResources(connection,stmt);
+
+        }
+        return playerArrayList;
+    }
+
 }

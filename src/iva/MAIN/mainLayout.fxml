@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iva.MAIN.mainController">
+   <children>
+      <ImageView fitHeight="926.0" fitWidth="1380.0" layoutY="-65.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/picts/backgrowndPict4MainMenu2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="195.0" prefHeight="203.0" prefWidth="1165.0" text="Welcome to your daily">
+         <font>
+            <Font name="Arial Narrow Bold" size="130.0" />
+         </font>
+      </Label>
+      <Label layoutX="253.0" layoutY="348.0" prefHeight="178.0" prefWidth="503.0" text="Fantasy">
+         <font>
+            <Font name="Arial Narrow Bold" size="150.0" />
+         </font>
+      </Label>
+      <Button layoutX="593.0" layoutY="543.0" mnemonicParsing="false" onAction="#changeScreenOnButtonPushToShowAllTeamMenu" prefHeight="217.0" prefWidth="215.0" textAlignment="CENTER" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="593.0" AnchorPane.rightAnchor="592.0" AnchorPane.topAnchor="543.0">
+         <font>
+            <Font size="38.0" />
+         </font>
+         <graphic>
+            <ImageView blendMode="MULTIPLY" fitHeight="210.0" fitWidth="209.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/picts/checkStats.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

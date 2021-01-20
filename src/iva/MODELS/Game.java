@@ -14,6 +14,9 @@ public class Game {
     private int opponentScore;
     private ObservableList<Player> playerListStats;
 
+    public Game() {
+    }
+
     //constructor
     public Game(String teamName, LocalDate dateOfTheGame, String opponentName, String teamWinOrLoose, int teamScore, int opponentScore, ObservableList<Player> playerListStats) {
         this.teamName = teamName;

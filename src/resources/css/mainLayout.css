@@ -1,0 +1,4 @@
+#mainMenuBtn {
+    -fx-background-image: url("/resources/picts/checkStats.png");
+    -fx-background-size: cover;
+}

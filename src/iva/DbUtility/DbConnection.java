@@ -20,7 +20,7 @@ public class DbConnection {
         connectionProps.put("password", "Ivaoy");
         connectionProps.put("useSSL", "false");
 
-        String url = "jdbc:mysql://localhost:3306/fantasy";
+        String url = "jdbc:mysql://localhost:3306/fantasyDB";
         try {
             connection = DriverManager.getConnection(url, connectionProps);
 //            System.out.println("connection was established");

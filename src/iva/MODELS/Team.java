@@ -9,6 +9,9 @@ public class Team {
     private ObservableList<Game> listOfGames;
 
     //constructor
+    public Team(String name) {
+        this.name = name;
+    }
 
     //getters and setters
 
