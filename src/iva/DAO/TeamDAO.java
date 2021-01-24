@@ -8,4 +8,6 @@ public interface TeamDAO {
     ObservableList<Game> getAllGames4TheTeam(String teamName);
 
     boolean addGame(Game game);
+
+    public ObservableList<Game> getAllGames4TheTeamWithOnlyPlayersFANPTS(String teamName);
 }

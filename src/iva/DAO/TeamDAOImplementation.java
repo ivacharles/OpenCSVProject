@@ -15,8 +15,7 @@ public class TeamDAOImplementation implements TeamDAO{
     ResultSet rs = null;
     /*------------------------------------------------------------------------------------------------*/
 
-
-
+    //this methods return a list of games with all the plaster' stats
     @Override
     public ObservableList<Game> getAllGames4TheTeam(String teamName) {
         ObservableList <Game> allgames4thisTeam = FXCollections.observableArrayList();
@@ -72,7 +71,7 @@ public class TeamDAOImplementation implements TeamDAO{
             stmt.setInt(6,gameStats.getOpponentScore());
 
             int rowAffected = stmt.executeUpdate();
-//            System.out.println(rowAffected);
+            System.out.println(rowAffected);
 
             //get generated key bak
             rs = stmt.getGeneratedKeys();
@@ -196,4 +195,71 @@ public class TeamDAOImplementation implements TeamDAO{
         return playerArrayList;
     }
 
+    //this methods return a list of games with all the plaster' fantasy points
+    public ObservableList<Game> getAllGames4TheTeamWithOnlyPlayersFANPTS(String teamName) {
+        ObservableList <Game> allgames = FXCollections.observableArrayList();
+
+        try {
+            connection = DbConnection.establishConnection(); // establish a connection
+
+            String gamesSQL = "select * from game where homeTeam = ? order by dateOfTheGame desc;";
+            stmt = connection.prepareStatement(gamesSQL);
+
+            stmt.setString(1,teamName);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()){
+                Game game = new Game();
+                String gameID = rs.getString("gameID");
+                game.setTeamName(rs.getString("homeTeam"));
+                game.setDateOfTheGame(rs.getTimestamp("dateOfTheGame").toLocalDateTime().toLocalDate());
+                game.setOpponentName(rs.getString("opponentName"));
+                game.setTeamWinOrLoose(rs.getString("teamWinOrLoose"));
+                game.setTeamScore(rs.getInt("teamScore"));
+                game.setOpponentScore(rs.getInt("opponentScore"));
+                //all players stats for this game
+                game.setPlayerListStats(getAllPlayersFantasyPointsOnly4ThisGame(gameID));
+                allgames.add(game);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnection.closeResources(connection,stmt);
+
+        }
+        return allgames;
+    }
+
+    private ObservableList<Player> getAllPlayersFantasyPointsOnly4ThisGame(String gameID) {
+        ObservableList<Player> playerArrayList = FXCollections.observableArrayList();
+
+        try {
+            connection = DbConnection.establishConnection(); // establish a connection
+
+            String playersSQL = "select  playerName, FAN,  MINI from player where gameID = ?;";
+            stmt = connection.prepareStatement(playersSQL);
+
+            stmt.setString(1,gameID);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()){
+
+                String playeName = (rs.getString("playerName"));
+                double setFAN = (rs.getDouble("FAN"));
+                String setMIN = (rs.getString("MINI"));
+
+                Player player = new Player(playeName,setFAN,setMIN);
+                playerArrayList.add(player);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbConnection.closeResources(connection,stmt);
+
+        }
+        return playerArrayList;
+    }
 }

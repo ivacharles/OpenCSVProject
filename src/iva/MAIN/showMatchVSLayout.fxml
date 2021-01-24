@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iva.MAIN.MatchVSController">
+   <children>
+      <ImageView fitHeight="970.0" fitWidth="1617.0" opacity="0.62" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/picts/backgrowndPict4MainMenu2.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listView" layoutX="453.0" layoutY="33.0" prefHeight="791.0" prefWidth="239.0" />
+      <TextArea fx:id="selectedListView" layoutX="953.0" layoutY="117.0" prefHeight="649.0" prefWidth="239.0" />
+      <Button layoutX="760.0" layoutY="397.0" mnemonicParsing="false" onAction="#listViewButtonPushed" prefHeight="88.0" prefWidth="141.0" text="Select Team (s)" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Button layoutX="1237.0" layoutY="465.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="141.0" text="Reset">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Button layoutX="1237.0" layoutY="361.0" mnemonicParsing="false" onAction="#OnGOButtonPushed" prefHeight="88.0" prefWidth="141.0" text="GO">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="141.0" prefHeight="455.0" prefWidth="421.0" text=" Select one team or up to four teams at once, then click on GO to see their stats or Reset to re-select." textAlignment="CENTER" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="System Bold Italic" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="label4SelectedTeamTextAreaConfirmation" layoutX="699.0" layoutY="14.0" prefHeight="61.0" prefWidth="672.0" text="label4SelectedTeamTextAreaConfirmation" textAlignment="CENTER" textFill="#f80202">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Button layoutY="1.0" mnemonicParsing="false" onAction="#changeScreenOnButtonPushToMainLayout" prefHeight="53.0" prefWidth="46.0">
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/picts/homeicon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

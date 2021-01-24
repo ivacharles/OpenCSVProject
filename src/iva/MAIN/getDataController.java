@@ -97,7 +97,7 @@ public class getDataController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        wasGameStatsSavedProperly.setText("");
     }
 
     private Node createPage(Integer pageIndex) {
@@ -120,6 +120,7 @@ public class getDataController implements Initializable {
         ObservableList<Player> playersStatsList = getPlayerStats4GameFromFilePath(submittedFilePath);
 
         String teamName = SelectedTeamName;
+        System.out.println("Hello here from OnButtonPressedGetData METHOD SelectedTeamName => "+SelectedTeamName);
         game.setTeamName(teamName);
         game.setDateOfTheGame(dateOfTheGamePicker.getValue());
         game.setOpponentName(opponentTeamNameChoice.getValue());

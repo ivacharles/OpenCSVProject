@@ -77,3 +77,6 @@ drop table game;
 insert into player values ('Nets - G26','Nets','ÔJoe¬†HarrisF','26:12','3','6','50','2','4','50','1','2','50','0','1','1','0','0','0','0','4','9','23');
 delete from game where gameID='9';
 delete from player where gameID='9';
+
+select * from game where homeTeam = 'Nets' order by dateOfTheGame desc;
+select  playerName, FAN,  MINI from player where gameID = '106';

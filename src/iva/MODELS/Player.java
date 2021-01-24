@@ -36,6 +36,11 @@ public class Player {
     private int plusMinus; // plusMinus (+/-)
     private double FAN; // fantasy podouble
 
+    public Player(String playerName, double fan, String min){
+        this.playerName = new SimpleStringProperty(playerName);
+        this.MIN = new SimpleStringProperty(min);
+        this.FAN = fan;
+    }
     public Player(){}
     public Player(String playerName, double fan, String min, int pts, int rebTotal, int ast, int stl, int blk, int to, int pf) {
         this.playerName = new SimpleStringProperty(playerName);
@@ -266,17 +271,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player{" +
-                "playerName=" + playerName +
-                ", MIN=" + MIN +
-                ", REBTotal=" + REBTotal +
-                ", AST=" + AST +
-                ", STL=" + STL +
-                ", BLK=" + BLK +
-                ", TO=" + TO +
-                ", PF=" + PF +
-                ", PTS=" + PTS +
-                ", FAN=" + FAN +
-                '}';
+        return "[" + getPlayerName() + ",\t\t " + getMIN() + ",\t\t " + getFAN() + "]";
     }
 }

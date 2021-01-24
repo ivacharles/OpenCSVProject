@@ -17,7 +17,7 @@
             <Image url="@../../resources/picts/backgrowndPict4MainMenu2.png" />
          </image>
       </ImageView>
-      <GridPane hgap="5.0" layoutX="26.0" layoutY="214.0" prefHeight="632.0" prefWidth="1290.0" vgap="5.0">
+      <GridPane hgap="5.0" layoutX="27.0" layoutY="163.0" prefHeight="632.0" prefWidth="1290.0" vgap="5.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -144,7 +144,7 @@
                   <Font size="27.0" />
                </font>
             </Button>
-            <Button fx:id="Maveriks" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Dallas Mavericks" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="6">
+            <Button fx:id="Mavericks" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="1.0" mnemonicParsing="false" onAction="#changeScreenAndSendDataOnButtonPushToShowSelectedTeamStats" prefHeight="136.0" prefWidth="204.0" text="Dallas Mavericks" textOverrun="WORD_ELLIPSIS" wrapText="true" GridPane.columnIndex="6">
                <font>
                   <Font size="27.0" />
                </font>
@@ -166,7 +166,7 @@
             </Button>
          </children>
       </GridPane>
-      <Label layoutX="343.0" layoutY="32.0" text="Select your team" textFill="#0a0a0a">
+      <Label layoutX="344.0" layoutY="14.0" text="Select your team" textFill="#0a0a0a">
          <font>
             <Font name="Arial Narrow Bold Italic" size="100.0" />
          </font>
